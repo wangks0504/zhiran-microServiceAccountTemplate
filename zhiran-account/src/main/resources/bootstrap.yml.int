@@ -1,0 +1,14 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /account
+spring:
+  application:
+    name: zhiran-account-server
+  cloud:
+    nacos:
+      server-addr: 121.41.121.72:18848
+      config:
+        server-addr: 121.41.121.72:18848
+        prefix: zhiran-account-feign-common
+        file-extension: yaml

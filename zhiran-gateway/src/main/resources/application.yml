@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: zhiran-gateway-server
+  cloud:
+    nacos:
+      server-addr: 192.168.88.130:8848
+    gateway:
+      routes:
+        # 知然AI账户API代理 PowerBY:wangks0504 版权所有
+        - id: zhiran-account-server
+          uri: lb://zhiran-account-server
+          predicates:
+            - Path=/account/**
+      default-filters:
+        - TokenAuth=/account/api/login;/account/api/register
+  redis:
+    host: 192.168.88.130
+    port: 6379
+    timeout: 1000
