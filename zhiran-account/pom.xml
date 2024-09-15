@@ -40,6 +40,11 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
+<!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
 <!--健康检查依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,7 +72,21 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+<!--添加commons组件-->
+        <dependency>
+            <groupId>com.zhiran.common</groupId>
+            <artifactId>zhiran-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+<!--添加moudules组件-->
+        <dependency>
+            <groupId>com.zhiran.modules</groupId>
+            <artifactId>zhiran-modules</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
+
 <!--打包配置-->
     <build>
         <resources>

@@ -1,22 +1,34 @@
 package com.zhiran.common.exception;
 
+import com.zhiran.common.domin.vo.response.ResponseVO;
 import com.zhiran.common.enums.BusinessErrors;
 
-public class BusinessRuntimeException extends RuntimeException {
+public class BusinessRuntimeException extends  RuntimeException{
+    private BusinessErrors businessErrors;
 
-    private BusinessErrors businessError;
-
-    public BusinessRuntimeException(BusinessErrors businessError) {
-        super(businessError.getMsg());
-        this.businessError = businessError;
+    /**
+     * @param businessErrors
+     * @return ResponseVo
+     */
+    public  BusinessRuntimeException(BusinessErrors businessErrors){
+        super(businessErrors.getMsg());
+        this.businessErrors = businessErrors;
     }
 
-    public BusinessRuntimeException(BusinessErrors businessError, String message) {
-        super(message);
-        this.businessError = businessError;
+    /**
+     * @param businessErrors
+     * @param errorMsg 主要是自定义错误信息
+     */
+    public BusinessRuntimeException (BusinessErrors businessErrors , String errorMsg){
+        super(errorMsg);
+        this.businessErrors = businessErrors;
     }
 
-    public BusinessErrors getBusinessError() {
-        return businessError;
+    /**
+     * @return businessErrors
+     */
+    public BusinessErrors getBusinessErrors(){
+        return this.businessErrors;
     }
+
 }

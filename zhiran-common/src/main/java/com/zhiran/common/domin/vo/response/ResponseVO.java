@@ -69,7 +69,7 @@ public class ResponseVO<T> implements Serializable {
     public static ResponseVO error(BusinessRuntimeException exception) {
         ResponseVO responseVO = build(ResponseState.ERROR);
         responseVO.setMessage(exception.getMessage());
-        responseVO.setCode(exception.getBusinessError().getCode());
+        responseVO.setCode(exception.getBusinessErrors().getCode());
         return responseVO;
     }
 

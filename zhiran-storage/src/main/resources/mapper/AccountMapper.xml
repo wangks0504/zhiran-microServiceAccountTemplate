@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhiran.storage.mapper.AccountMapper">
+    <resultMap id="BaseResultMap" type="com.zhiran.modules.po.AccountPO">
+        <id column="id" jdbcType="varchar" property="id"/>
+        <result column="username" jdbcType="varchar" property="username"/>
+        <result column="useralias" jdbcType="varchar" property="useralias"/>
+        <result column="password" jdbcType="varchar" property="password"/>
+        <result column="phone" jdbcType="varchar" property="phoneNumber"/>
+        <result column="avatar" jdbcType="varchar" property="avatar"/>
+        <result column="CREATE_TIME" jdbcType="datetime" property="createTime"/>
+        <result column="CREATE_BY" jdbcType="varchar" property="createBy"/>
+        <result column="UPDATE_TIME" jdbcType="datetime" property="updateTime"/>
+        <result column="UPDATE_BY" jdbcType="varchar" property="updateBy"/>
+        <result column="REVISION" jdbcType="int" property="revision"/>
+        <result column="status" jdbcType="tinyint" property="status"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,username,useralias,avatar,password,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,UPDATE_BY,
+        REVISION,status
+    </sql>
+<!--    -->
+    <select id="selectByPrimaryId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from z_account
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+<!--    -->
+    <select id="checkLogin" parameterType="com.zhiran.modules.po.AccountPO" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from z_account
+        <where>
+            <if test="username != null">
+                or username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="phone != null">
+                or phone = #{phone,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+<!--    -->
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from z_account
+        where id=#{id,jdbcType=VARCHAR}
+    </delete>
+<!--    -->
+    <insert id="insert" parameterType="com.zhiran.modules.po.AccountPO" >
+        insert IGNORE into z_account (id,username,useralias,password,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,
+                                      UPDATE_BY,REVISION,status,avatar)
+                                    values(#{id,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR}, #{useralias,jdbcType=VARCHAR},
+                                           #{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},
+                                           #{createdBy,jdbcType=VARCHAR},#{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
+                                           #{revision,jdbcType=int},#{status,jdbcType=TINYINT}, #{avatar,jdbcType=VARCHAR})
+    </insert>
+<!--    -->
+    <insert id="insertSelective" parameterType="com.zhiran.modules.po.AccountPO">
+        insert IGNORE into z_account
+
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="username != null">
+                username,
+            </if>
+            <if test="useralias != null">
+                useralias,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="createBy != null">
+                CREATE_BY
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME
+            </if>
+            <if test="updateBy != null">
+                UPDATE_BY
+            </if>
+            <if test="revision != null">
+                REVISION,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="avatar != null">
+                avatar,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                #{id,jdbcType=VARCHAR},
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="useralias != null">
+                #{useralias,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="revision != null">
+                #{revision,jdbcType=int},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="avatar != null">
+                #{avatar,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+<!--    -->
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhiran.modules.po.AccountPO">
+        update z_account
+        <set>
+            <if test="username != null">
+                 username=#{username,jdbcType=VARCHAR},
+            </if>
+            <if test="useralias != null">
+                useralias=#{useralias,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+               password= #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone=#{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME=#{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+               CREATE_BY= #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME=#{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                UPDATE_BY=#{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="revision != null">
+                REVISION=#{revision,jdbcType=int},
+            </if>
+            <if test="status != null">
+                status=#{status,jdbcType=TINYINT},
+            </if>
+            <if test="avatar != null">
+                avatar=#{avatar,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+<!--    -->
+    <update id="updateByPrimaryKey" parameterType="com.zhiran.modules.po.AccountPO">
+        update z_account
+       set username=#{username,jdbcType=VARCHAR},
+           useralias=#{useralias,jdbcType=VARCHAR},
+           password= #{password,jdbcType=VARCHAR},
+           phone=#{phone,jdbcType=VARCHAR},
+           CREATE_TIME=#{createTime,jdbcType=TIMESTAMP},
+           CREATE_BY= #{createBy,jdbcType=VARCHAR},
+           UPDATE_TIME=#{updateTime,jdbcType=TIMESTAMP},
+           UPDATE_BY=#{updateBy,jdbcType=VARCHAR},
+           REVISION=#{revision,jdbcType=int},
+           status=#{status,jdbcType=TINYINT},
+           avatar=#{avatar,jdbcType=VARCHAR}
+        where id =#{id,jdbcType=VARCHAR}
+    </update>
+</mapper>

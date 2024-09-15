@@ -28,6 +28,10 @@ public class AccountVO implements VO {
      */
     private String useralias;
     /**
+     * 用户头像地址
+     */
+    private String avatar;
+    /**
      * 用户密码
      */
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -37,7 +41,7 @@ public class AccountVO implements VO {
      * 手机号码
      */
     @NotNull(message = "电话号码不能为空",groups = {Group.Creat.class})
-    private String phoneNumber;
+    private String phone;
     /**
      * 创建时间
      */
@@ -47,7 +51,7 @@ public class AccountVO implements VO {
      * 创建用户
      */
     @InitialResolver(resolver = InitialResolverType.CURRENT_ACCOUNT,groups = {Group.Creat.class})
-    private String createByUser;
+    private String createBy;
     /**
      * 更新时间
      */
@@ -57,7 +61,7 @@ public class AccountVO implements VO {
      * 更新用户
      */
     @InitialResolver(resolver = InitialResolverType.CURRENT_ACCOUNT,groups = {Group.Creat.class})
-    private String updateByUser;
+    private String updateBy;
     /**
      * 账户状态
      * @1 正常
@@ -112,12 +116,12 @@ public class AccountVO implements VO {
         this.password = password;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getCreateTime() {
@@ -128,12 +132,12 @@ public class AccountVO implements VO {
         this.createTime = createTime;
     }
 
-    public String getCreateByUser() {
-        return createByUser;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setCreateByUser(String createByUser) {
-        this.createByUser = createByUser;
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
     }
 
     public String getUpdateTime() {
@@ -144,12 +148,12 @@ public class AccountVO implements VO {
         this.updateTime = updateTime;
     }
 
-    public String getUpdateByUser() {
-        return updateByUser;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setUpdateByUser(String updateByUser) {
-        this.updateByUser = updateByUser;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Integer getStatus() {
@@ -182,6 +186,13 @@ public class AccountVO implements VO {
 
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
+    }
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     @Override
