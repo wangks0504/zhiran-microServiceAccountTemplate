@@ -45,7 +45,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-
 <!--mybatis启动依赖-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

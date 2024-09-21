@@ -4,27 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a01a2f5-90b1-4aa6-b763-b0c1957f943d" name="Changes" comment="2024911account1">
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/configuration/GlobleExceptionHander.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/configuration/RedisConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/configuration/SwaggerConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/handler/AccountHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/service/AccountAPIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/web/APIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/initial/annotation/RequestInitial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/StorageApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/mapper/AccountMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/resources/mapper/AccountMapper.xml" afterDir="false" />
+    <list default="true" id="7a01a2f5-90b1-4aa6-b763-b0c1957f943d" name="Changes" comment="2024915storage1">
+      <change afterPath="$PROJECT_DIR$/zhiran-AI/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zhiran-AI/src/main/java/com/zhiran/ai/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zhiran-AI/src/test/java/com/zhiran/ai/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zhiran-modules/src/main/java/com/zhiran/modules/po/AccountPOOriginal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/configuration/GlobleExceptionHander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhiran-account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/configuration/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/configuration/SwaggerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/handler/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/handler/AccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/service/AccountAPIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/service/AccountAPIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/web/APIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/web/APIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/zhiranAccountApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-account/src/main/java/com/zhiran/zhiranAccountApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/domin/vo/response/ResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/domin/vo/response/ResponseVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/exception/BusinessRuntimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/exception/BusinessRuntimeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/utils/CommonsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-common/src/main/java/com/zhiran/common/utils/CommonsUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-modules/src/main/java/com/zhiran/modules/po/AccountPO.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-modules/src/main/java/com/zhiran/modules/po/AccountPO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhiran-modules/src/main/java/com/zhiran/modules/vo/AccountVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-modules/src/main/java/com/zhiran/modules/vo/AccountVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhiran-storage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-storage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-storage/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-storage/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhiran-storage/src/main/resources/mapper/AccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zhiran-storage/src/main/resources/mapper/AccountMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,6 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.StorageApplication.executor": "Run",
     "Spring Boot.zhiranAccountApplication.executor": "Run",
@@ -105,12 +106,16 @@
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Important(E)\ZhiranAI\zhiran-common\src\main\java\com\zhiran\common\utils" />
       <recent name="E:\Important(E)\ZhiranAI\zhiran-common\src\main\java\com\zhiran\common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhiran.storage.configuration" />
       <recent name="com.zhiran.common.utils" />
       <recent name="com.zhiran.common.template" />
       <recent name="com.zhiran.common.entity" />
@@ -131,7 +136,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.StorageApplication">
+  <component name="RunManager" selected="Spring Boot.zhiranAccountApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ZhiranAI" />
       <method v="2">
@@ -178,6 +183,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.zhiranAccountApplication" />
+      <item itemvalue="Spring Boot.StorageApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.StorageApplication" />
@@ -205,7 +215,12 @@
       <workItem from="1726227655144" duration="5429000" />
       <workItem from="1726294719279" duration="3301000" />
       <workItem from="1726305897074" duration="3494000" />
-      <workItem from="1726323112782" duration="12734000" />
+      <workItem from="1726323112782" duration="12859000" />
+      <workItem from="1726382514888" duration="8303000" />
+      <workItem from="1726402419984" duration="11609000" />
+      <workItem from="1726737367980" duration="2006000" />
+      <workItem from="1726838072509" duration="3547000" />
+      <workItem from="1726841960086" duration="9397000" />
     </task>
     <task id="LOCAL-00001" summary="2024911account1">
       <option name="closed" value="true" />
@@ -215,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726067931788</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2024915storage1">
+      <option name="closed" value="true" />
+      <created>1726377704105</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726377704105</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +248,19 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="202497gateway1" />
     <MESSAGE value="2024911account1" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024911account1" />
+    <MESSAGE value="2024915storage1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024915storage1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zhiran-storage/src/main/java/com/zhiran/storage/service/AccountService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

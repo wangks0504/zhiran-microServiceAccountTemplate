@@ -2,21 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhiran.storage.mapper.AccountMapper">
     <resultMap id="BaseResultMap" type="com.zhiran.modules.po.AccountPO">
-        <id column="id" jdbcType="varchar" property="id"/>
-        <result column="username" jdbcType="varchar" property="username"/>
-        <result column="useralias" jdbcType="varchar" property="useralias"/>
-        <result column="password" jdbcType="varchar" property="password"/>
-        <result column="phone" jdbcType="varchar" property="phoneNumber"/>
-        <result column="avatar" jdbcType="varchar" property="avatar"/>
-        <result column="CREATE_TIME" jdbcType="datetime" property="createTime"/>
-        <result column="CREATE_BY" jdbcType="varchar" property="createBy"/>
-        <result column="UPDATE_TIME" jdbcType="datetime" property="updateTime"/>
-        <result column="UPDATE_BY" jdbcType="varchar" property="updateBy"/>
-        <result column="REVISION" jdbcType="int" property="revision"/>
-        <result column="status" jdbcType="tinyint" property="status"/>
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="useralias" jdbcType="VARCHAR" property="useralias"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="password_salt" jdbcType="VARCHAR" property="passwordSalt"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy"/>
+        <result column="REVISION" jdbcType="INTEGER" property="revision"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id,username,useralias,avatar,password,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,UPDATE_BY,
+        id,username,useralias,avatar,password,password_salt,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,UPDATE_BY,
         REVISION,status
     </sql>
 <!--    -->
@@ -47,12 +48,16 @@
     </delete>
 <!--    -->
     <insert id="insert" parameterType="com.zhiran.modules.po.AccountPO" >
-        insert IGNORE into z_account (id,username,useralias,password,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,
+        insert IGNORE into z_account (id,username,useralias,password,password_salt,phone,CREATE_TIME,CREATE_BY,UPDATE_TIME,
                                       UPDATE_BY,REVISION,status,avatar)
                                     values(#{id,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR}, #{useralias,jdbcType=VARCHAR},
-                                           #{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},
-                                           #{createdBy,jdbcType=VARCHAR},#{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
-                                           #{revision,jdbcType=int},#{status,jdbcType=TINYINT}, #{avatar,jdbcType=VARCHAR})
+                                           #{password,jdbcType=VARCHAR},#{passwordSalt,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},
+                                           #{createBy,jdbcType=VARCHAR},#{updateTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR},
+                                           #{revision,jdbcType=INTEGER},#{status,jdbcType=TINYINT}, #{avatar,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertOriginal" parameterType="com.zhiran.modules.po.AccountPOOriginal">
+        insert IGNORE  into z_account_original(id,username,password,password_salt)
+        values(#{id,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{passwordSalt,jdbcType=VARCHAR})
     </insert>
 <!--    -->
     <insert id="insertSelective" parameterType="com.zhiran.modules.po.AccountPO">
@@ -68,6 +73,9 @@
             </if>
             <if test="password != null">
                 password,
+            </if>
+            <if test="passwordSalt != null">
+                password_salt,
             </if>
             <if test="phone != null">
                 phone,
@@ -105,6 +113,9 @@
             <if test="password != null">
                 #{password,jdbcType=VARCHAR},
             </if>
+            <if test="passwordSalt != null">
+                #{passwordSalt,jdbcType=VARCHAR},
+            </if>
             <if test="phone != null">
                 #{phone,jdbcType=VARCHAR},
             </if>
@@ -121,7 +132,7 @@
                 #{updateBy,jdbcType=VARCHAR},
             </if>
             <if test="revision != null">
-                #{revision,jdbcType=int},
+                #{revision,jdbcType=INTEGER},
             </if>
             <if test="status != null">
                 #{status,jdbcType=TINYINT},
@@ -144,6 +155,9 @@
             <if test="password != null">
                password= #{password,jdbcType=VARCHAR},
             </if>
+            <if test="passwordSalt != null">
+                password_salt= #{passwordSalt,jdbcType=VARCHAR},
+            </if>
             <if test="phone != null">
                 phone=#{phone,jdbcType=VARCHAR},
             </if>
@@ -160,7 +174,7 @@
                 UPDATE_BY=#{updateBy,jdbcType=VARCHAR},
             </if>
             <if test="revision != null">
-                REVISION=#{revision,jdbcType=int},
+                REVISION=#{revision,jdbcType=INTEGER},
             </if>
             <if test="status != null">
                 status=#{status,jdbcType=TINYINT},
@@ -171,18 +185,25 @@
         </set>
         where id = #{id,jdbcType=VARCHAR}
     </update>
+    <update id="updateByPrimaryKeyOriginal" parameterType="com.zhiran.modules.po.AccountPOOriginal">
+        update z_account_original set username=#{username,jdbcType=VARCHAR},
+                                         password= #{password,jdbcType=VARCHAR},
+                                         password_salt= #{passwordSalt,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
 <!--    -->
     <update id="updateByPrimaryKey" parameterType="com.zhiran.modules.po.AccountPO">
         update z_account
        set username=#{username,jdbcType=VARCHAR},
            useralias=#{useralias,jdbcType=VARCHAR},
            password= #{password,jdbcType=VARCHAR},
+           password_salt= #{passwordSalt,jdbcType=VARCHAR},
            phone=#{phone,jdbcType=VARCHAR},
            CREATE_TIME=#{createTime,jdbcType=TIMESTAMP},
            CREATE_BY= #{createBy,jdbcType=VARCHAR},
            UPDATE_TIME=#{updateTime,jdbcType=TIMESTAMP},
            UPDATE_BY=#{updateBy,jdbcType=VARCHAR},
-           REVISION=#{revision,jdbcType=int},
+           REVISION=#{revision,jdbcType=INTEGER},
            status=#{status,jdbcType=TINYINT},
            avatar=#{avatar,jdbcType=VARCHAR}
         where id =#{id,jdbcType=VARCHAR}

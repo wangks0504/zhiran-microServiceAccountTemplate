@@ -37,6 +37,13 @@ public class AccountVO implements VO {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotNull(message = "密码不能为空",groups = {Group.Creat.class,Group.Select.class})
     private String password;
+
+    /**
+     * 密码盐值
+     */
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @NotNull(message = "密码盐值不能为空",groups = {Group.Creat.class,Group.Select.class})
+    private String passwordSalt;
     /**
      * 手机号码
      */
@@ -193,6 +200,13 @@ public class AccountVO implements VO {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+    public String getPasswordSalt() {
+        return passwordSalt;
+    }
+
+    public void setPasswordSalt(String passwordSalt) {
+        this.passwordSalt = passwordSalt;
     }
 
     @Override

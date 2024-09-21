@@ -31,9 +31,20 @@ public class AccountPO implements Serializable, PO {
      */
     private String password;
     /**
+     * 密码盐值
+     */
+    private String passwordSalt;
+
+
+
+    /**
+     * 用户头像存储地址
+     */
+    private String avatar;
+    /**
      * 手机号码
      */
-    private String phoneNumber;
+    private String phone;
     /**
      * 创建时间
      */
@@ -41,7 +52,7 @@ public class AccountPO implements Serializable, PO {
     /**
      * 创建用户
      */
-    private String createByUser;
+    private String createBy;
     /**
      * 更新时间
      */
@@ -49,7 +60,7 @@ public class AccountPO implements Serializable, PO {
     /**
      * 更新用户
      */
-    private String updateByUser;
+    private String updateBy;
     /**
      * 账户状态
      * @1 正常
@@ -104,12 +115,12 @@ public class AccountPO implements Serializable, PO {
         this.password = password;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getCreateTime() {
@@ -120,12 +131,12 @@ public class AccountPO implements Serializable, PO {
         this.createTime = createTime;
     }
 
-    public String getCreateByUser() {
-        return createByUser;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setCreateByUser(String createByUser) {
-        this.createByUser = createByUser;
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
     }
 
     public String getUpdateTime() {
@@ -136,12 +147,12 @@ public class AccountPO implements Serializable, PO {
         this.updateTime = updateTime;
     }
 
-    public String getUpdateByUser() {
-        return updateByUser;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setUpdateByUser(String updateByUser) {
-        this.updateByUser = updateByUser;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Integer getStatus() {
@@ -174,6 +185,20 @@ public class AccountPO implements Serializable, PO {
 
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
+    }
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+    public String getPasswordSalt() {
+        return passwordSalt;
+    }
+
+    public void setPasswordSalt(String passwordSalt) {
+        this.passwordSalt = passwordSalt;
     }
 
     @Override

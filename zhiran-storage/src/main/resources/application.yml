@@ -42,4 +42,5 @@ spring:
 logging:
   level:
     org.springframework: DEBUG
-
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

@@ -11,6 +11,9 @@ import org.springframework.beans.BeanUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.text.NumberFormat;
 import java.util.*;
 
@@ -48,7 +51,25 @@ public class CommonsUtils {
     public static String encodeMD5(String orginStr) {
         return DigestUtils.md5Hex(orginStr);
     }
-
+    /**
+     * 生成随机盐值
+     */
+    public static String getRandomSalt() throws NoSuchAlgorithmException {
+        SecureRandom salt = SecureRandom.getInstance("SHA1PRNG");
+        byte[] saltByte = new byte[16];
+        salt.nextBytes(saltByte);
+        String saltByBase64 = Base64.getEncoder().encodeToString(saltByte);
+        return  saltByBase64;
+    }
+    /**
+     * 对密码和盐值进行SHA-256加密
+     */
+    public static String HashPassword(String salt,String password) throws NoSuchAlgorithmException {
+        MessageDigest hp = MessageDigest.getInstance("SHA-256");
+        hp.update(salt.getBytes());
+        byte[] HashedPassword = hp.digest(password.getBytes());
+        return  Base64.getEncoder().encodeToString(HashedPassword);
+    }
 
     /**
      * 计算文件签名
