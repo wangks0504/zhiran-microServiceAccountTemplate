@@ -6,6 +6,7 @@ tags:开发后端辅助文档
 ---
 
 ###### date: 2024-08-21 12:09:08
+######基于Springboot + SpringCloud + nacos + redis + mysql开发
 
 <!-- more -->
 
